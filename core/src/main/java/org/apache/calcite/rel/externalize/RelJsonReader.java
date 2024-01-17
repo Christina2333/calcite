@@ -146,7 +146,7 @@ public class RelJsonReader {
             requireNonNull(getStringList(table),
                 () -> "getStringList for " + table);
         return requireNonNull(relOptSchema.getTableForMember(list),
-            () -> "table " + table + " is not found in schema " + relOptSchema);
+            () -> "table " + String.join(".", list) + " is not found in schema " + relOptSchema);
       }
 
       @Override public RelNode getInput() {
